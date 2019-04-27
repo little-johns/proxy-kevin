@@ -5,13 +5,13 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, './public')));
+app.use('/:id', express.static(path.join(__dirname, './public')));
 
-const chartReq = axios.create({
-    baseURL: 'http://ec2-13-57-177-212.us-west-1.compute.amazonaws.com:2468/'
+  const chartReq = axios.create({
+    baseURL: 'http://localhost:8080/'
   });
   
   app.get('/api/:stockId', (req, res) => {
