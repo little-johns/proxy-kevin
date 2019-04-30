@@ -25,20 +25,6 @@ app.use('/:id', express.static(path.join(__dirname, './public')));
     })
   })
 
-  // const buyFormReq = axios.create({
-  //     baseURL: 'http://ec2-3-84-115-167.compute-1.amazonaws.com:8080/' 
-  // });
-
-  // app.get('/stocks/:query', (req, res) => {
-  //     buyFormReq.get(`stocks/${req.params.query}`)
-  //     .then((response) => {
-  //         res.status(response.data);
-  //     })
-  //     .catch(() => {
-  //       res.status(400);
-  //     })
-  // })
-
 app.listen(port, () => {
     console.log('Server is listening on port', port);
 });
